@@ -1,12 +1,13 @@
 const twoSum = (numList, targetSum) => {
   let in1 = 0;
   let in2 = 1;
+  let testSum = numList[in1] + numList[in2];
   console.log(`index 1: ${in1}, index 2: ${in2}`);
 
   if (numList.length < 2) {
     console.log("The array is not long enough.");
     return [false];
-  } else if (numList[in1] + numList[in2] === targetSum) {
+  } else if (testSum === targetSum) {
     console.log("The first two array values work.");
     console.log(`index 1: ${numList[in1]}, index 2: ${numList[in2]}`);
     return [in1, in2];
@@ -17,7 +18,6 @@ const twoSum = (numList, targetSum) => {
 
   console.log("first two conditionals failed");
 
-  let testSum = 0;
   let countA = 1;
   let countB = 1;
 
@@ -26,9 +26,7 @@ const twoSum = (numList, targetSum) => {
     console.log(`Loop A: pass ${countA}`);
     countA = countA + 1;
     console.log(`index 1: ${numList[in1]}, index 2: ${numList[in2]}`);
-    console.log(`the testSum is ${testSum}`);
-    console.log(`Value 1: ${numList[in1]}, Value 2: ${numList[in2]}`);
-    console.log(`index 1: ${numList[in1]}, index 2: ${numList[in2]}`);
+    console.log(`the testSum is ${testSum}, target is ${targetSum}`);
 
     if (testSum !== targetSum) {
       console.log("testSum wasn't the target");
