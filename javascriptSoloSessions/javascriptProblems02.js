@@ -99,7 +99,29 @@ function flattenArray(arrays) {
 // ex. 'elbow' === 'below'
 // ex. 'Dormitory' === 'dirty room##'
 
-function isAnagram(str1, str2) {}
+function isAnagram(str1, str2) {
+    // **My attempt 1
+    // const fir = str1.toLowerCase().split('');
+    // const sec = str2.toLowerCase().split('');
+    // let ans = [];
+    // for(char of fir) {
+    //     if(sec.includes(char)) {
+    //         ans.push(true);
+    //     } else {
+    //         ans.push(false);
+    //     };
+    // };
+    // console.log(ans);
+    // return ans.includes(false) ? false : true;
+    ///////////////////////////////
+    // **My attempt 2
+    let fir = str1.toLowerCase().replace(/\s{2,}/g, '');
+    const fin1 = fir.toLowerCase().replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, '');
+    let sec = str2.toLowerCase().replace(/\s{2,}/g, '');
+    const fin2 = sec.toLowerCase().replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, '');
+    const aStr1 = fin1.split('');
+    const aStr2 = fin2.split('');
+}
 
 // CHALLENGE 5: LETTER CHANGES
 // Change every letter of the string to the one that follows it and capitalize the vowels
@@ -128,6 +150,6 @@ function letterChanges(str) {
 }
 
 // Call Function
-const output = letterChanges('hello there');
+const output = isAnagram('Dormitory', 'dormllll');
 
 console.log(output);
