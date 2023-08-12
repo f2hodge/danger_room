@@ -1,0 +1,24 @@
+{
+  "name": "danger_room",
+  "version": "1.0.0",
+  "description": "a coding space for working problems and sharpening skills",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/f2hodge/danger_room.git"
+  },
+  "keywords": [
+    "practice",
+    "solutions",
+    "algorithms"
+  ],
+  "author": "RH",
+  "license": "SEE LICENSE IN GITHUB",
+  "bugs": {
+    "url": "https://github.com/f2hodge/danger_room/issues"
+  },
+  "homepage": "https://github.com/f2hodge/danger_room#readme"
+}
