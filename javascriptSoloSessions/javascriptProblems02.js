@@ -89,7 +89,10 @@ function chunkArray(arr, len) {
 // Take an array of arrays and flatten to a single array
 // ex. [[1, 2], [3, 4], [5, 6], [7]] = [1, 2, 3, 4, 5, 6, 7]
 
-function flattenArray(arrays) {}
+function flattenArray(arrays) {
+    const newArr = arrays.flat();
+    return newArr;
+}
 
 // CHALLENGE 4: ANAGRAM
 // Return true if anagram and false if not
@@ -103,9 +106,28 @@ function isAnagram(str1, str2) {}
 // Z should turn to A
 // ex. 'hello there' === 'Ifmmp UIfsf'
 
-function letterChanges(str) {}
+function letterChanges(str) {
+    // **My attempt 1
+    const alpha = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+    const vowel = ['a', 'e', 'i', 'o', 'u']
+    strArr = str.split('');
+    let ind = 0;
+    for(char in strArr) {
+        ind = strArr.indexOf(char);
+        if(char === 'z') {
+            char = 'A';
+        } else if(strArr.includes(char)) {
+            char = alpha[(ind + 1)];
+        }
+        if(vowel.includes(char)) {
+            char = char.toUpperCase();
+        }
+    }
+    const newStr = strArr.join('');
+    return newStr;
+}
 
 // Call Function
-const output = chunkArray([1, 2, 3, 4, 5, 6, 7], 3);
+const output = letterChanges('hello there');
 
 console.log(output);
