@@ -121,6 +121,13 @@ function isAnagram(str1, str2) {
     const fin2 = sec.toLowerCase().replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, '');
     const aStr1 = fin1.split('');
     const aStr2 = fin2.split('');
+    
+    for(char in aStr1) {
+        if(aStr2.includes(char)) {
+            count++;
+            target.push(true)
+        }
+    }
 }
 
 // CHALLENGE 5: LETTER CHANGES
@@ -150,6 +157,6 @@ function letterChanges(str) {
 }
 
 // Call Function
-const output = isAnagram('Dormitory', 'dormllll');
+const output = isAnagram('Dormitory', 'dirtyroom');
 
 console.log(output);
