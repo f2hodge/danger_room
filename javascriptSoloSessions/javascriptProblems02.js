@@ -143,32 +143,22 @@ function letterChanges(str) {
     let newArr = [];
     let ind1 = 0;
     let count = 0;
-    console.log(`${strArr} before loop`);
     for(char of strArr) {
-        console.log(char);
         if(char === 'z') {
             newArr[count] = 'A';
-            console.log(`Z character: ${char}`);
-            console.log(`Reassigned character: ${newArr[count]}`);
         } else if(alpha.includes(char)) {
             ind1 = alpha.indexOf(char);
             newArr[count] = alpha[(ind1 + 1)];
-            console.log(`Normal character: ${char}`);
-            console.log(`Reassigned character: ${newArr[count]}`);
             if(vowel.includes(newArr[count])) {
                 newArr[count] = newArr[count].toUpperCase();
-                console.log(`Vowel character: ${char}`);
             }
         } else {
             console.log(`odd character: ${char}`);
             console.log(`NOT Reassigned character: ${newArr[count]}`);
         }
         count++;
-        console.log(`pass: ${count}, newArr: ${newArr}`);
     }
-    console.log(`strArr: ${strArr}, newArr: ${newArr}`);
     const newStr = newArr.join('');
-    console.log(`newStr: ${newStr}`);
     return newStr;
 }
 

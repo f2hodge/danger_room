@@ -8,7 +8,28 @@ function addAll() {}
 // Pass in a number to loop up to and add all of the prime numbers. A prime number is a whole number greater than 1 whose only factors are 1 and itself
 // ex. sumAllPrimes(10) == 17
 
-function sumAllPrimes() {}
+function sumAllPrimes(targ) {
+    const floor1 = 1;
+    let possiblePrime = targ;
+    let divisor = possiblePrime -1;
+    let primeArr = [];
+    for(t = targ; t > 0; t--){
+        for(i = t -1; i > 1; i--) {
+            console.log(`INNER t: ${t} i: ${i}`);
+            if(t % i === 0) {
+                console.log(`INNER was evenly divisible by ${i}`);
+                break;
+            } else {
+                console.log(`INNER was not evenly divisible by ${i}`);
+            }
+            if(i === 2) {
+                console.log("t ************INNER************* 2");
+                console.log(`INNER t: ${t} i: ${i}`);
+            }
+        }
+        console.log(`OUTER end of loop t: ${t} i: ${i}`);
+    }
+}
 
 // CHALLENGE 3: SEEK & DESTROY
 // Remove from the array whatever is in the following arguments. Return the leftover numbers in an array
@@ -39,3 +60,8 @@ function missingLetters() {}
 // evenOddSums([50, 60, 60, 45, 71]) == [170, 116]
 
 function evenOddSums() {}
+
+// Call Function
+const output = sumAllPrimes(15);
+
+console.log(output);
