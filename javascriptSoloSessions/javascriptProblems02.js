@@ -139,24 +139,40 @@ function letterChanges(str) {
     // **My attempt 1
     const alpha = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
     const vowel = ['a', 'e', 'i', 'o', 'u']
-    strArr = str.split('');
-    let ind = 0;
-    for(char in strArr) {
-        ind = strArr.indexOf(char);
+    let strArr = str.split('');
+    let newArr = [];
+    let ind1 = 0;
+    let count = 0;
+    console.log(`${strArr} before loop`);
+    for(char of strArr) {
+        console.log(char);
         if(char === 'z') {
-            char = 'A';
-        } else if(strArr.includes(char)) {
-            char = alpha[(ind + 1)];
+            newArr[count] = 'A';
+            console.log(`Z character: ${char}`);
+            console.log(`Reassigned character: ${newArr[count]}`);
+        } else if(alpha.includes(char)) {
+            ind1 = alpha.indexOf(char);
+            newArr[count] = alpha[(ind1 + 1)];
+            console.log(`Normal character: ${char}`);
+            console.log(`Reassigned character: ${newArr[count]}`);
+            if(vowel.includes(newArr[count])) {
+                newArr[count] = newArr[count].toUpperCase();
+                console.log(`Vowel character: ${char}`);
+            }
+        } else {
+            console.log(`odd character: ${char}`);
+            console.log(`NOT Reassigned character: ${newArr[count]}`);
         }
-        if(vowel.includes(char)) {
-            char = char.toUpperCase();
-        }
+        count++;
+        console.log(`pass: ${count}, newArr: ${newArr}`);
     }
-    const newStr = strArr.join('');
+    console.log(`strArr: ${strArr}, newArr: ${newArr}`);
+    const newStr = newArr.join('');
+    console.log(`newStr: ${newStr}`);
     return newStr;
 }
 
 // Call Function
-const output = isAnagram('Dormitory', 'dirtyroom');
+const output = letterChanges('zabcdefghijklmnop');
 
 console.log(output);
